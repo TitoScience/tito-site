@@ -1,0 +1,21 @@
+{
+  "name": "Tito Science Site",
+  "homepage": "titoscience.rocks",
+  "description": "Our Website",
+  "main": "index.html",
+  "authors": [
+    "Tito Vi"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap-less": "^3.3.4",
+    "jquery": "^3.1.1"
+  }
+}
