@@ -72,4 +72,9 @@ $(document).ready(function() {
         afterSlideLoad: function(anchorLink, index, slideAnchor, slideIndex){},
         onSlideLeave: function(anchorLink, index, slideIndex, direction, nextSlideIndex){}
     });
+
+    $('.flip').hover(function(){
+        $(this).find('.card').toggleClass('flipped');
+
+    });
 });
