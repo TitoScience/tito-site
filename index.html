@@ -8,8 +8,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
     <style>
         body {
             font: 400 15px/1.8 Lato, sans-serif;
@@ -32,9 +31,17 @@
 
 
 
+
+
+
+
         .container {
             padding: 80px 120px;
         }
+
+
+
+
 
 
 
@@ -52,9 +59,17 @@
 
 
 
+
+
+
+
         .person:hover {
             border-color: #f1f1f1;
         }
+
+
+
+
 
 
 
@@ -68,6 +83,10 @@
             /* Set width to 100% */
             margin: auto;
         }
+
+
+
+
 
 
 
@@ -88,10 +107,18 @@
 
 
 
+
+
+
+
         .bg-1 {
             background: #2d2d30;
             color: #bdbdbd;
         }
+
+
+
+
 
 
 
@@ -105,9 +132,17 @@
 
 
 
+
+
+
+
         .bg-1 p {
             font-style: italic;
         }
+
+
+
+
 
 
 
@@ -122,10 +157,18 @@
 
 
 
+
+
+
+
         .list-group-item:last-child {
             border-bottom-right-radius: 0;
             border-bottom-left-radius: 0;
         }
+
+
+
+
 
 
 
@@ -141,10 +184,18 @@
 
 
 
+
+
+
+
         .thumbnail p {
             margin-top: 15px;
             color: #555;
         }
+
+
+
+
 
 
 
@@ -162,12 +213,20 @@
 
 
 
+
+
+
+
         .btn:hover,
         .btn:focus {
             border: 1px solid #333;
             background-color: #fff;
             color: #000;
         }
+
+
+
+
 
 
 
@@ -186,10 +245,18 @@
 
 
 
+
+
+
+
         .modal-header,
         .modal-body {
             padding: 40px 50px;
         }
+
+
+
+
 
 
 
@@ -203,12 +270,20 @@
 
 
 
+
+
+
+
         #googleMap {
             width: 100%;
             height: 400px;
             -webkit-filter: grayscale(100%);
             filter: grayscale(100%);
         }
+
+
+
+
 
 
 
@@ -228,6 +303,10 @@
 
 
 
+
+
+
+
         .navbar li a,
         .navbar .navbar-brand {
             color: #d5d5d5 !important;
@@ -237,9 +316,17 @@
 
 
 
+
+
+
+
         .navbar-nav li a:hover {
             color: #fff !important;
         }
+
+
+
+
 
 
 
@@ -254,9 +341,17 @@
 
 
 
+
+
+
+
         .navbar-default .navbar-toggle {
             border-color: transparent;
         }
+
+
+
+
 
 
 
@@ -271,6 +366,10 @@
 
 
 
+
+
+
+
         .dropdown-menu li a {
             color: #000 !important;
         }
@@ -279,9 +378,17 @@
 
 
 
+
+
+
+
         .dropdown-menu li a:hover {
             background-color: red !important;
         }
+
+
+
+
 
 
 
@@ -297,9 +404,17 @@
 
 
 
+
+
+
+
         footer a {
             color: #f5f5f5;
         }
+
+
+
+
 
 
 
@@ -314,6 +429,10 @@
 
 
 
+
+
+
+
         .form-control {
             border-radius: 0;
         }
@@ -322,11 +441,544 @@
 
 
 
+
+
+
+
         textarea {
             resize: none;
         }
+
+
+
+
+
+        .btn:hover,
+        .btn:focus,
+        .btn:active {
+            outline: 0 !important;
+        }
+        /* entire container, keeps perspective */
+
+
+
+
+        .card-container {
+            -webkit-perspective: 800px;
+            -moz-perspective: 800px;
+            -o-perspective: 800px;
+            perspective: 800px;
+            margin-bottom: 30px;
+        }
+        /* flip the pane when hovered */
+
+
+
+
+        .card-container:not(.manual-flip):hover .card,
+        .card-container.hover.manual-flip .card {
+            -webkit-transform: rotateY( 180deg);
+            -moz-transform: rotateY( 180deg);
+            -o-transform: rotateY( 180deg);
+            transform: rotateY( 180deg);
+        }
+
+
+
+
+
+
+        .card-container.static:hover .card,
+        .card-container.static.hover .card {
+            -webkit-transform: none;
+            -moz-transform: none;
+            -o-transform: none;
+            transform: none;
+        }
+        /* flip speed goes here */
+
+
+
+
+        .card {
+            -webkit-transition: -webkit-transform .5s;
+            -moz-transition: -moz-transform .5s;
+            -o-transition: -o-transform .5s;
+            transition: transform .5s;
+            -webkit-transform-style: preserve-3d;
+            -moz-transform-style: preserve-3d;
+            -o-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+            position: relative;
+        }
+        /* hide back of pane during swap */
+
+
+
+
+        .front,
+        .back {
+            -webkit-backface-visibility: hidden;
+            -moz-backface-visibility: hidden;
+            -o-backface-visibility: hidden;
+            backface-visibility: hidden;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: #FFF;
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.14);
+        }
+        /* front pane, placed above back */
+
+
+
+
+        .front {
+            z-index: 2;
+        }
+        /* back, initially hidden pane */
+
+
+
+
+        .back {
+            -webkit-transform: rotateY( 180deg);
+            -moz-transform: rotateY( 180deg);
+            -o-transform: rotateY( 180deg);
+            transform: rotateY( 180deg);
+            z-index: 3;
+        }
+
+
+
+
+
+        .back .btn-simple {
+            position: absolute;
+            left: 0;
+            bottom: 4px;
+        }
+        /*        Style       */
+
+
+
+
+
+
+        .card {
+            background: none repeat scroll 0 0 #FFFFFF;
+            border-radius: 4px;
+            color: #444444;
+        }
+
+
+
+
+        .card-container,
+        .front,
+        .back {
+            width: 100%;
+            height: 420px;
+            border-radius: 4px;
+        }
+
+
+
+
+        .card .cover {
+            height: 105px;
+            overflow: hidden;
+            border-radius: 4px 4px 0 0;
+        }
+
+
+
+
+        .card .cover img {
+            width: 100%;
+        }
+
+
+
+
+        .card .user {
+            border-radius: 50%;
+            display: block;
+            height: 120px;
+            margin: -55px auto 0;
+            overflow: hidden;
+            width: 120px;
+        }
+
+
+
+
+        .card .user img {
+            background: none repeat scroll 0 0 #FFFFFF;
+            border: 4px solid #FFFFFF;
+            width: 100%;
+        }
+
+
+
+
+
+        .card .content {
+            background-color: rgba(0, 0, 0, 0);
+            box-shadow: none;
+            padding: 10px 20px 20px;
+        }
+
+
+
+
+        .card .content .main {
+            min-height: 160px;
+        }
+
+
+
+
+        .card .back .content .main {
+            height: 215px;
+        }
+
+
+
+
+        .card .name {
+            font-size: 22px;
+            line-height: 28px;
+            margin: 10px 0 0;
+            text-align: center;
+            text-transform: capitalize;
+        }
+
+
+
+
+        .card h5 {
+            margin: 5px 0;
+            font-weight: 400;
+            line-height: 20px;
+        }
+
+
+
+
+        .card .profession {
+            color: #999999;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+
+
+
+        .card .footer {
+            border-top: 1px solid #EEEEEE;
+            color: #999999;
+            margin: 30px 0 0;
+            padding: 10px 0 0;
+            text-align: center;
+        }
+
+
+
+
+        .card .footer .social-links {
+            font-size: 18px;
+        }
+
+
+
+
+        .card .footer .social-links a {
+            margin: 0 7px;
+        }
+
+
+
+
+        .card .footer .btn-simple {
+            margin-top: -6px;
+        }
+
+
+
+
+        .card .header {
+            padding: 15px 20px;
+            height: 90px;
+        }
+
+
+
+
+        .card .motto {
+            border-bottom: 1px solid #EEEEEE;
+            color: #999999;
+            font-size: 14px;
+            font-weight: 400;
+            padding-bottom: 10px;
+            text-align: center;
+        }
+
+
+
+
+
+        .card .stats-container {
+            width: 100%;
+            margin-top: 50px;
+        }
+
+
+
+
+        .card .stats {
+            display: block;
+            float: left;
+            width: 33.333333%;
+            text-align: center;
+        }
+
+
+
+
+
+        .card .stats:first-child {
+            border-right: 1px solid #EEEEEE;
+        }
+
+
+
+
+        .card .stats:last-child {
+            border-left: 1px solid #EEEEEE;
+        }
+
+
+
+
+        .card .stats h4 {
+            font-weight: 300;
+            margin-bottom: 5px;
+        }
+
+
+
+
+        .card .stats p {
+            color: #777777;
+        }
+        /*      Just for presentation        */
+
+
+
+
+
+        .title {
+            color: #506A85;
+            text-align: center;
+            font-weight: 300;
+            font-size: 44px;
+            margin-bottom: 90px;
+            line-height: 90%;
+        }
+
+
+
+
+        .title small {
+            font-size: 17px;
+            color: #999;
+            text-transform: uppercase;
+            margin: 0;
+        }
+
+
+
+
+        .space-30 {
+            height: 30px;
+            display: block;
+        }
+
+
+
+
+        .space-50 {
+            height: 50px;
+            display: block;
+        }
+
+
+
+
+        .space-200 {
+            height: 200px;
+            display: block;
+        }
+
+
+
+
+        .white-board {
+            background-color: #FFFFFF;
+            min-height: 200px;
+            padding: 60px 60px 20px;
+        }
+
+
+
+
+        .ct-heart {
+            color: #F74933;
+        }
+
+
+
+
+
+        pre.prettyprint {
+            background-color: #ffffff;
+            border: 1px solid #999;
+            margin-top: 20px;
+            padding: 20px;
+            text-align: left;
+        }
+
+
+
+
+        .atv,
+        .str {
+            color: #05AE0E;
+        }
+
+
+
+
+        .tag,
+        .pln,
+        .kwd {
+            color: #3472F7;
+        }
+
+
+
+
+        .atn {
+            color: #2C93FF;
+        }
+
+
+
+
+        .pln {
+            color: #333;
+        }
+
+
+
+
+        .com {
+            color: #999;
+        }
+
+
+
+
+
+        .btn-simple {
+            opacity: .8;
+            color: #666666;
+            background-color: transparent;
+        }
+
+
+
+
+
+        .btn-simple:hover,
+        .btn-simple:focus {
+            background-color: transparent;
+            box-shadow: none;
+            opacity: 1;
+        }
+
+
+
+
+        .btn-simple i {
+            font-size: 16px;
+        }
+
+
+
+
+
+        .navbar-brand-logo {
+            padding: 0;
+        }
+
+
+
+
+        .navbar-brand-logo .logo {
+            border: 1px solid #333333;
+            border-radius: 50%;
+            float: left;
+            overflow: hidden;
+            width: 60px;
+        }
+
+
+
+
+        .navbar .navbar-brand-logo .brand {
+            color: #FFFFFF;
+            float: left;
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 20px;
+            margin-left: 10px;
+            margin-top: 10px;
+            width: 60px;
+        }
+
+
+
+
+        .navbar-default .navbar-brand-logo .brand {
+            color: #555;
+        }
+        /*       Fix bug for IE      */
+
+        @media screen and (-ms-high-contrast: active),
+        (-ms-high-contrast: none) {
+            .front,
+            .back {
+                -ms-backface-visibility: visible;
+                backface-visibility: visible;
+            }
+
+            .back {
+                visibility: hidden;
+                -ms-transition: all 0.2s cubic-bezier(.92, .01, .83, .67);
+            }
+            .front {
+                z-index: 4;
+            }
+            .card-container:not(.manual-flip):hover .back,
+            .card-container.manual-flip.hover .back {
+                z-index: 5;
+                visibility: visible;
+            }
+        }
     </style>
-    <link href="bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <style src="styles/css/site.css"></style>
 </head>
 
 <body id="home" data-spy="scroll" data-target=".navbar" data-offset="50">
@@ -390,15 +1042,7 @@
                     <h3>Chicago</h3>
                     <p>Thank you, Chicago - A night we won't forget.</p>
                 </div>
-            </div>
-
-            <div class="item">
-                <img src="img/site.jpg" alt="Los Angeles" width="1200" height="700">
-                <div class="carousel-caption">
-                    <h3>LA</h3>
-                    <p>Even though the traffic was a mess, we had the best time playing at Venice Beach!</p>
-                </div>
-            </div>-->
+            </div> -->
         </div>
 
         <!-- Left and right controls -->
@@ -420,7 +1064,283 @@
             of 2016, and originally just a weekend jam thing, this young band is getting close to finishing their first blithe
             endeavor called "Tito Moves".</p>
         <br>
+
         <div class="row">
+            <div class="col-sm-10 col-sm-offest-1 col-lg-4">
+                <div class="card-container manual-flip">
+                    <div class="card">
+                        <div class="front">
+                            <div class="cover">
+                                <img src="img/tito_jo_bg.jpg" />
+                            </div>
+                            <div class="user">
+                                <img class="img-circle" src="img/tito_jo.jpg" />
+                            </div>
+                            <div class="content">
+                                <div class="main">
+                                    <h3 class="name">Tito Benj</h3>
+                                    <p class="profession">Drums</p>
+                                    <p class="text-center">"I am a Guitar, Drum, and Korean Language Tutor"</p>
+                                </div>
+                                <div class="footer">
+                                    <button class="btn btn-simple" onclick="rotateCard(this)">
+                                    <i class="fa fa-mail-forward"></i> Learn more
+                                </button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end front panel -->
+                        <div class="back">
+                            <div class="header">
+                                <h5 class="motto">"walk by faith, not with feet."</h5>
+                            </div>
+                            <div class="content">
+                                <div class="main">
+                                    <h5 class="text-center">Interests</h5>
+                                    <p class="text-center">God, Gaming, Pop Punk, Pizza, Korean Food, Cats, Marvel and DC.</p>
+
+                                    <h5 class="text-center">Influences</h5>
+                                    <p class="text-center">Blink 182, All Time Low, The Story So Far, Dave Weckl, Matt Garstka, Luke Holland, Michael
+                                        Keene, Kamikazee, Typecast
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="footer">
+                                <button class="btn btn-simple" rel="tooltip" title="Flip Card" onclick="rotateCard(this)">
+                                <i class="fa fa-reply"></i> Back
+                            </button>
+                                <div class="social-links text-right">
+                                    <a href="http://facebook.com/benjocriste" class="facebook"><i class="fa fa-facebook fa-fw"></i></a>
+                                    <a href="http://instagram.com/benjocriste" class="google"><i class="fa fa-instagram fa-fw"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end back panel -->
+                    </div>
+                    <!-- end card -->
+                </div>
+            </div>
+            <div class="col-sm-10 col-sm-offest-1 col-lg-4">
+                <div class="card-container manual-flip">
+                    <div class="card">
+                        <div class="front">
+                            <div class="cover">
+                                <img src="img/tito_boy_bg.jpg" />
+                            </div>
+                            <div class="user">
+                                <img class="img-circle" src="img/tito_boy.jpg" />
+                            </div>
+                            <div class="content">
+                                <div class="main">
+                                    <h3 class="name">Tito Boy</h3>
+                                    <p class="profession">Keyboard</p>
+                                    <p class="text-center">"I am a Karaoke Director"</p>
+                                </div>
+                                <div class="footer">
+                                    <button class="btn btn-simple" onclick="rotateCard(this)">
+                                    <i class="fa fa-mail-forward"></i> Learn more
+                                </button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end front panel -->
+                        <div class="back">
+                            <div class="header">
+                                <h5 class="motto">"To be or not to be, this is my awesome motto!"</h5>
+                            </div>
+                            <div class="content">
+                                <div class="main">
+                                    <h5 class="text-center">Interests</h5>
+                                    <p class="text-center">Burgers, Transgressive/Satire Novels, Science, Arachnids, The Universe.</p>
+
+                                    <h5 class="text-center">Influences</h5>
+                                    <p class="text-center">Bill Evans, Derek Sherinian, The Beatles, Smashing Pumpkins, Eraserheads, Planet X</p>
+                                </div>
+                            </div>
+                            <div class="footer">
+                                <button class="btn btn-simple" rel="tooltip" title="Flip Card" onclick="rotateCard(this)">
+                                <i class="fa fa-reply"></i> Back
+                            </button>
+                                <div class="social-links text-right">
+                                    <a href="http://facebook.com/boyetus" class="facebook"><i class="fa fa-facebook fa-fw"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end back panel -->
+                    </div>
+                    <!-- end card -->
+                </div>
+            </div>
+            <div class="col-sm-10 col-sm-offest-1 col-lg-4">
+                <div class="card-container manual-flip">
+                    <div class="card">
+                        <div class="front">
+                            <div class="cover">
+                                <img src="img/tito_feli_bg.jpg" />
+                            </div>
+                            <div class="user">
+                                <img class="img-circle" src="img/tito_feli.jpg" />
+                            </div>
+                            <div class="content">
+                                <div class="main">
+                                    <h3 class="name">Tito Feli</h3>
+                                    <p class="profession">Bass</p>
+                                    <p class="text-center">"I am an Operations Analyst"</p>
+                                </div>
+                                <div class="footer">
+                                    <button class="btn btn-simple" onclick="rotateCard(this)">
+                                    <i class="fa fa-mail-forward"></i> Learn more
+                                </button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end front panel -->
+                        <div class="back">
+                            <div class="header">
+                                <h5 class="motto">"To be or not to be, this is my awesome motto!"</h5>
+                            </div>
+                            <div class="content">
+                                <div class="main">
+                                    <h5 class="text-center">Interests</h5>
+                                    <p class="text-center">Beer, Pasta, Classic Movies (War, Mafia, and Prohibition Era)</p>
+
+                                    <h5 class="text-center">Influences</h5>
+                                    <p class="text-center">Marilyn Manson, Mr. Big, Billy Sheehan, Sting, Vinnie Colaiuta, Mike Mangini.</p>
+                                </div>
+                            </div>
+                            <div class="footer">
+                                <button class="btn btn-simple" rel="tooltip" title="Flip Card" onclick="rotateCard(this)">
+                                <i class="fa fa-reply"></i> Back
+                            </button>
+                                <div class="social-links text-right">
+                                    <a href="http://facebook.com/tenzerosix" class="facebook"><i class="fa fa-facebook fa-fw"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end back panel -->
+                    </div>
+                    <!-- end card -->
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-0 col-sm-offest-0 col-lg-2">
+
+            </div>
+            <div class="col-sm-10 col-sm-offest-1 col-lg-4">
+                <div class="card-container manual-flip">
+                    <div class="card">
+                        <div class="front">
+                            <div class="cover">
+                                <img src="img/tito_jerms_bg.jpg" />
+                            </div>
+                            <div class="user">
+                                <img class="img-circle" src="img/tito_jerms.jpg" />
+                            </div>
+                            <div class="content">
+                                <div class="main">
+                                    <h3 class="name">Tito Jerms</h3>
+                                    <p class="profession">Guitar</p>
+                                    <p class="text-center">"I am a Program Sales Manager"</p>
+                                </div>
+                                <div class="footer">
+                                    <button class="btn btn-simple" onclick="rotateCard(this)">
+                                    <i class="fa fa-mail-forward"></i> Learn more
+                                </button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end front panel -->
+                        <div class="back">
+                            <div class="header">
+                                <h5 class="motto">"To be or not to be, this is my awesome motto!"</h5>
+                            </div>
+                            <div class="content">
+                                <div class="main">
+                                    <h5 class="text-center">Interests</h5>
+                                    <p class="text-center">Documentary films, Mysteries, Science, Fictions, Tapa and Root Beer.</p>
+
+                                    <h5 class="text-center">Influences</h5>
+                                    <p class="text-center">Eric Johnson, Jack Thammarat, Guthrie Govan, Boyetus Irabon, Fayeed Tan, Alex Band, Dream Theater, Mr.
+                        Big, Chon.</p>
+                                </div>
+                            </div>
+                            <div class="footer">
+                                <button class="btn btn-simple" rel="tooltip" title="Flip Card" onclick="rotateCard(this)">
+                                <i class="fa fa-reply"></i> Back
+                            </button>
+                                <div class="social-links text-right">
+                                    <a href="https://www.facebook.com/romejhey" class="facebook"><i class="fa fa-facebook fa-fw"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end back panel -->
+                    </div>
+                    <!-- end card -->
+                </div>
+            </div>
+            <div class="col-sm-10 col-sm-offest-1 col-lg-4">
+                <div class="card-container manual-flip">
+                    <div class="card">
+                        <div class="front">
+                            <div class="cover">
+                                <img src="img/tito_vi_bg.jpg" />
+                            </div>
+                            <div class="user">
+                                <img class="img-circle" src="img/tito_vi.jpg" />
+                            </div>
+                            <div class="content">
+                                <div class="main">
+                                    <h3 class="name">Tito Vi</h3>
+                                    <p class="profession">Vocals</p>
+                                    <p class="text-center">"I am a Software Developer"</p>
+                                </div>
+                                <div class="footer">
+                                    <button class="btn btn-simple" onclick="rotateCard(this)">
+                                    <i class="fa fa-mail-forward"></i> Learn more
+                                </button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end front panel -->
+                        <div class="back">
+                            <div class="header">
+                                <h5 class="motto">"If there's a wheel, there's an automobile!"</h5>
+                            </div>
+                            <div class="content">
+                                <div class="main">
+                                    <h5 class="text-center">Interests</h5>
+                                    <p class="text-center">Beer, Pasta, Classic Movies (War, Mafia, and Prohibition Era)</p>
+
+                                    <h5 class="text-center">Influences</h5>
+                                    <p class="text-center">Marilyn Manson, Mr. Big, Billy Sheehan, Sting, Vinnie Colaiuta, Mike Mangini.</p>
+                                </div>
+                            </div>
+                            <div class="footer">
+                                <button class="btn btn-simple" rel="tooltip" title="Flip Card" onclick="rotateCard(this)">
+                                <i class="fa fa-reply"></i> Back
+                            </button>
+                                <div class="social-links text-right">
+                                    <a href="https://facebook.com/Imt2Vi" class="facebook"><i class="fa fa-facebook fa-fw"></i></a>
+                                    <a href="http://instagram.com/t2Vi" class="google"><i class="fa fa-instagram fa-fw"></i></a>
+                                    <a href="http://twitter.com/t2Vi_" class="twitter"><i class="fa fa-twitter fa-fw"></i></a>
+                                    <a href="http://blog.johnvinnymarquez.net/" class="twitter"><i class="fa fa-tumblr fa-fw"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end back panel -->
+                    </div>
+                    <!-- end card -->
+                </div>
+            </div>
+            <div class="col-sm-0 col-sm-offest-0 col-lg-2">
+
+            </div>
+        </div>
+
+
+
+        <!--<div class="row">
             <div class="col-sm-4">
                 <p class="text-center"><strong>Tito Benj</strong></p><br>
                 <a href="#demo" data-toggle="collapse">
@@ -494,7 +1414,7 @@
             <div class="col-sm-2">
 
             </div>
-        </div>
+        </div>-->
     </div>
 
     <!-- Container (TOUR Section) -->
@@ -658,35 +1578,57 @@ Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp
             <span class="sub">ver. a.0.1</span></p>
     </footer>
 
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>-->
+    <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript">
+                                                                                                        $().ready(function () {
+                                                                                                            $('[rel="tooltip"]').tooltip();
+
+                                                                                                        });
+
+                                                                                                        function rotateCard(btn) {
+                                                                                                            var $card = $(btn).closest('.card-container');
+                                                                                                            console.log($card);
+                                                                                                            if ($card.hasClass('hover')) {
+                                                                                                                $card.removeClass('hover');
+                                                                                                            } else {
+                                                                                                                $card.addClass('hover');
+                                                                                                            }
+                                                                                                        }
+    </script>
+
     <script>
-        $(document).ready(function () {
-            // Initialize Tooltip
-            $('[data-toggle="tooltip"]').tooltip();
+                                                                                                        $(document).ready(function () {
+                                                                                                            // Initialize Tooltip
+                                                                                                            $('[data-toggle="tooltip"]').tooltip();
 
-            // Add smooth scrolling to all links in navbar + footer link
-            $(".navbar a, footer a[href='#home']").on('click', function (event) {
+                                                                                                            // Add smooth scrolling to all links in navbar + footer link
+                                                                                                            $(".navbar a, footer a[href='#home']").on('click', function (event) {
 
-                // Make sure this.hash has a value before overriding default behavior
-                if (this.hash !== "") {
+                                                                                                                // Make sure this.hash has a value before overriding default behavior
+                                                                                                                if (this.hash !== "") {
 
-                    // Prevent default anchor click behavior
-                    event.preventDefault();
+                                                                                                                    // Prevent default anchor click behavior
+                                                                                                                    event.preventDefault();
 
-                    // Store hash
-                    var hash = this.hash;
+                                                                                                                    // Store hash
+                                                                                                                    var hash = this.hash;
 
-                    // Using jQuery's animate() method to add smooth page scroll
-                    // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
-                    $('html, body').animate({
-                        scrollTop: $(hash).offset().top
-                    }, 900, function () {
+                                                                                                                    // Using jQuery's animate() method to add smooth page scroll
+                                                                                                                    // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+                                                                                                                    $('html, body').animate({
+                                                                                                                        scrollTop: $(hash).offset().top
+                                                                                                                    }, 900, function () {
 
-                        // Add hash (#) to URL when done scrolling (default click behavior)
-                        window.location.hash = hash;
-                    });
-                } // End if
-            });
-        })
+                                                                                                                        // Add hash (#) to URL when done scrolling (default click behavior)
+                                                                                                                        window.location.hash = hash;
+                                                                                                                    });
+                                                                                                                } // End if
+                                                                                                            });
+                                                                                                        })
     </script>
 
 </body>
